@@ -26,7 +26,7 @@ Options:
 
 ```
 $ ansible-inventory --list > a.json
-$ jqgrep -k ansible_host a.json
+$ jqgrep ansible_host a.json
 
 a.json: ._meta.hostvars.["cs1"].ansible_host # cs1.example.com
 a.json: ._meta.hostvars.["cads"].ansible_host # cads.example.com
