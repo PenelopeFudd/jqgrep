@@ -34,7 +34,7 @@ a.json: ._meta.hostvars.["nfs-server"].ansible_host # nfs-server.example.com
 
 $ jqgrep -c ansible_host a.json
 
-jq '._meta.hostvars.["cs1"].ansible_host' a.json # cs1.example.com
-jq '._meta.hostvars.["cads"].ansible_host' a.json # cads.example.com
-jq '._meta.hostvars.["nfs"].ansible_host' a.json # nfs-server.example.com
+jq '._meta.hostvars["cs1"].ansible_host' a.json # cs1.example.com
+jq '._meta.hostvars["cads"].ansible_host' a.json # cads.example.com
+jq '._meta.hostvars["nfs"].ansible_host' a.json # nfs-server.example.com
 ```
