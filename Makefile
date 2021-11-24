@@ -15,7 +15,7 @@ SHELL:=$(shell which bash)
 HEADER=@echo "==Starting 'make $@'"
 FOOTER=@echo "====Ending 'make $@'"; echo ''
 
-tests :  ## Run some test cases
+check :  ## Run test cases
 	$(HEADER)
 	@cd test; for n in *.sh; do bash $$n; err=$$(( err + $$? )); done; exit $$err
 	$(FOOTER)
