@@ -21,3 +21,20 @@ Options:
     -p: Both s and m modes are enabled
     -x: Extended regex format (ignore whitespace and comments)
 ```
+
+## Examples:
+
+```
+$ ansible-inventory --list > a.json
+$ jqgrep -k ansible_host a.json
+
+a.json: ._meta.hostvars.["cs1"].ansible_host # cs1.example.com
+a.json: ._meta.hostvars.["cads"].ansible_host # cads.example.com
+a.json: ._meta.hostvars.["nfs-server"].ansible_host # nfs-server.example.com
+
+$ jqgrep -c ansible_host a.json
+
+jq '._meta.hostvars.["ca-dev-cas"].ansible_host' a.json # ca-dev-cas.ca-dev.netskrt.org
+jq '._meta.hostvars.["ca-dev-sms"].ansible_host' a.json # ca-dev-sms.ca-dev.netskrt.org
+jq '._meta.hostvars.["h-ca-dev-ns1"].ansible_host' a.json # h-ca-dev-ns1.ca-dev.netskrt.org
+```
