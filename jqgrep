@@ -102,4 +102,4 @@ def jqpath:
           end
         )
       end
-' "$@"
+' "$@" | sed 's/[.]\[/[/g'
