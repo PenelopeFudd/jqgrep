@@ -1,0 +1,17 @@
+{
+  "name" : "localhost",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "_na_",
+  "version" : {
+    "number" : "7.0.1",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "e4efcb5",
+    "build_date" : "2019-04-29T12:56:03.145736Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.0.0",
+    "minimum_wire_compatibility_version" : "6.7.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}

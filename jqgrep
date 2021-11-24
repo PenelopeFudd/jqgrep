@@ -21,6 +21,7 @@ if [[ "$err" != "" || "$PATTERN" == "" ]]; then
   echo "Usage: ${0##*/} [-c|-k|-v|-o|-d] [-i|-m|-n|-p|-s|-x] pattern [json-files...]
   This program will search json files for the given pattern as a key or
   value and optionally print the jq command for retrieving it.
+  The exit code is 0 for 'found' and 4 for 'not found'.
 
 Options:
     -c: Show matches as jq commands
@@ -48,7 +49,7 @@ if ! which jq > /dev/null 2>&1; then echo "The 'jq' command is not installed, ab
 # We've gotten the pattern, now shift so all that remains in $@ are the filenames:
 shift
 
-jq -r \
+jq -e -r \
   --arg pattern "$PATTERN" \
   --arg commands "$COMMANDS" \
   --arg keys "$KEYS" \
@@ -62,7 +63,7 @@ def jqpath:
   reduce .[] as $x
     ("";
      if ($x|type) == "string"
-     then . + ($x | if t then ".\(.)" else  ".[" + tojson + "]" end)
+     then . + ($x | if t then ".\(.)" else  "[" + tojson + "]" end)
      else . + "[\($x)]"
      end);
 
@@ -102,4 +103,4 @@ def jqpath:
           end
         )
       end
-' "$@" | sed 's/[.]\[/[/g'
+' "$@"

@@ -1,0 +1,10 @@
+{"pagelen": 10, "values": [{"scm": "git", "has_wiki": false, "description":
+"...", "links": {"watchers": {"href": "..."}, "commits": {"href": "..."},
+"self": {"href": "..."}, "html": {"href": "..."}, "avatar": {"href": "..."},
+"forks": {"href": "..."}, "clone": [{"href": "...", "name": "https"},
+{"href": "...", "name": "ssh"}], "pullrequests": {"href": "..."}},
+"fork_policy": "no_forks", "name": "...", "language": "", "created_on":
+"...", "full_name": "...", "has_issues": false, "owner": {"username": "...",
+"display_name": "...", "uuid": "...", "links": {"self": {"href": "..."},
+"html": {"href": "..."}, "avatar": {"href": "..."}}}, "updated_on": "...",
+"size": 2328936, "is_private": true, "uuid": "..."}], "page": 1, "size": 1}
